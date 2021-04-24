@@ -3,3 +3,6 @@ Understand datasets: where did the datasets come from.
 - label,score,md5
 
 Where did the score come from?
+
+Learned Bloom Filter: Why is the negative testing data being reduced?
+- Importance of first settign the negative dataset and then 
