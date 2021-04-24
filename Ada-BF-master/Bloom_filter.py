@@ -24,6 +24,7 @@ class BloomFilter():
             raise SyntaxError('The hash table is empty')
         if (self.n > 0) & (self.hash_len > 0):
             self.k = max(1,int(self.hash_len/n*0.6931472))
+            print("Num hash functions: ", self.k)
         elif (self.n==0):
             self.k = 1
         self.h = []
@@ -88,13 +89,30 @@ if __name__ == '__main__':
 
     data = pd.read_csv(DATA_PATH)
 
-    negative_sample = data.loc[(data['label'] == -1)]
-    positive_sample = data.loc[(data['label'] == 1)]
+    dataset_name = DATA_PATH.split("/")[-1]
 
-    query = positive_sample['query']
+    if (dataset_name == "Malware_data.csv"):
+        negative_sample = data.loc[(data['label'] == 0)]
+        positive_sample = data.loc[(data['label'] == 1)]
+
+        # query = positive_sample['query']
+        query = positive_sample['md5']
+        # query_negative = negative_sample['query']
+        query_negative = negative_sample['md5']
+    elif (dataset_name == "URL_data.csv"):
+        negative_sample = data.loc[(data['label'] == -1)]
+        positive_sample = data.loc[(data['label'] == 1)]
+
+        # query = positive_sample['query']
+        query = positive_sample['url']
+        # query_negative = negative_sample['query']
+        query_negative = negative_sample['url']
+    else:
+        print("Should not reach this case")
     n = len(query)
+    print("This is n: ", n)
     bloom_filter = BloomFilter(n, R_sum)
     bloom_filter.insert(query)
-    query_negative = negative_sample['query']
+    
     n1 = bloom_filter.test(query_negative, single_key=False)
-    print('False positive items: ', sum(n1))
+    print('False positive items: ', sum(n1)/len(query_negative))

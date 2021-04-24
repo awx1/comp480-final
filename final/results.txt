@@ -1,0 +1,13 @@
+python Bloom_filter.py --data_path ./Datasets/URL_data.csv --size_of_BF 200000
+False positive items:  0.23532260824422344
+
+python Bloom_filter.py --data_path ./Datasets/Malware_data.csv --size_of_BF 200000
+False positive items:  0.38729037097984176
+
+Vary bf size, calculate memory, calculate speed
+140000 : 50,000 to 650,000
+
+400000
+
+Between filters, compare the size required for each bloom filter to reach the same false positive rate.
+

@@ -1,0 +1,5 @@
+Understand datasets: where did the datasets come from.
+- url,label,score
+- label,score,md5
+
+Where did the score come from?
