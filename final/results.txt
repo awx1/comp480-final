@@ -4,6 +4,304 @@ False positive items:  0.23532260824422344
 python Bloom_filter.py --data_path ./Datasets/Malware_data.csv --size_of_BF 200000
 False positive items:  0.38729037097984176
 
+python learned_Bloom_filter.py --data_path ./Datasets/URL_data.csv --size_of_LBF 200000  --threshold_min 0.5   --threshold_max 0.95
+Num hash functions:  6
+Threshold: 0.500000, False positive items: 3487
+Num hash functions:  6
+Threshold: 0.510000, False positive items: 3432
+Num hash functions:  6
+Threshold: 0.520000, False positive items: 3489
+Num hash functions:  6
+Threshold: 0.530000, False positive items: 3424
+Num hash functions:  6
+Threshold: 0.540000, False positive items: 3424
+Num hash functions:  6
+Threshold: 0.550000, False positive items: 3367
+Num hash functions:  6
+Threshold: 0.560000, False positive items: 3391
+Num hash functions:  6
+Threshold: 0.570000, False positive items: 3383
+Num hash functions:  6
+Threshold: 0.580000, False positive items: 3370
+Num hash functions:  5
+Threshold: 0.590000, False positive items: 3589
+Num hash functions:  5
+Threshold: 0.600000, False positive items: 3470
+Num hash functions:  5
+Threshold: 0.610000, False positive items: 3481
+Num hash functions:  5
+Threshold: 0.620000, False positive items: 3619
+Num hash functions:  5
+Threshold: 0.630000, False positive items: 3733
+Num hash functions:  5
+Threshold: 0.640000, False positive items: 3732
+Num hash functions:  5
+Threshold: 0.650000, False positive items: 3851
+Num hash functions:  5
+Threshold: 0.660000, False positive items: 3922
+Num hash functions:  5
+Threshold: 0.670000, False positive items: 3974
+Num hash functions:  5
+Threshold: 0.680000, False positive items: 4103
+Num hash functions:  4
+Threshold: 0.690000, False positive items: 4365
+Num hash functions:  4
+Threshold: 0.700000, False positive items: 4662
+Num hash functions:  4
+Threshold: 0.710000, False positive items: 4820
+Num hash functions:  4
+Threshold: 0.720000, False positive items: 5029
+Num hash functions:  4
+Threshold: 0.730000, False positive items: 5107
+Num hash functions:  4
+Threshold: 0.740000, False positive items: 5289
+Num hash functions:  4
+Threshold: 0.750000, False positive items: 5417
+Num hash functions:  4
+Threshold: 0.760000, False positive items: 5614
+Num hash functions:  4
+Threshold: 0.770000, False positive items: 5918
+Num hash functions:  4
+Threshold: 0.780000, False positive items: 6105
+Num hash functions:  4
+Threshold: 0.790000, False positive items: 6393
+Num hash functions:  4
+Threshold: 0.800000, False positive items: 6578
+Num hash functions:  3
+Threshold: 0.810000, False positive items: 7362
+Num hash functions:  3
+Threshold: 0.820000, False positive items: 7564
+Num hash functions:  3
+Threshold: 0.830000, False positive items: 7784
+Num hash functions:  3
+Threshold: 0.840000, False positive items: 8008
+Num hash functions:  3
+Threshold: 0.850000, False positive items: 8284
+Num hash functions:  3
+Threshold: 0.860000, False positive items: 8576
+Num hash functions:  3
+Threshold: 0.870000, False positive items: 8964
+Num hash functions:  3
+Threshold: 0.880000, False positive items: 9237
+Num hash functions:  3
+Threshold: 0.890000, False positive items: 9527
+Num hash functions:  3
+Threshold: 0.900000, False positive items: 9920
+Num hash functions:  3
+Threshold: 0.910000, False positive items: 10396
+Num hash functions:  3
+Threshold: 0.920000, False positive items: 10571
+Num hash functions:  3
+Threshold: 0.930000, False positive items: 11368
+Num hash functions:  3
+Threshold: 0.940000, False positive items: 12043
+Num hash functions:  3
+Threshold: 0.950000, False positive items: 12547
+False positive items: 11423.0; FPR: 0.03312944643110914; Size of quries: 344799
+
+python learned_Bloom_filter.py --data_path ./Datasets/Malware_data.csv --size_of_LBF 200000  --threshold_min 0.5   --threshold_max 0.95
+Num hash functions:  70
+Threshold: 0.500000, False positive items: 633
+Num hash functions:  68
+Threshold: 0.510000, False positive items: 620
+Num hash functions:  67
+Threshold: 0.520000, False positive items: 573
+Num hash functions:  65
+Threshold: 0.530000, False positive items: 562
+Num hash functions:  64
+Threshold: 0.540000, False positive items: 555
+Num hash functions:  63
+Threshold: 0.550000, False positive items: 551
+Num hash functions:  60
+Threshold: 0.560000, False positive items: 516
+Num hash functions:  59
+Threshold: 0.570000, False positive items: 497
+Num hash functions:  57
+Threshold: 0.580000, False positive items: 458
+Num hash functions:  56
+Threshold: 0.590000, False positive items: 450
+Num hash functions:  55
+Threshold: 0.600000, False positive items: 366
+Num hash functions:  53
+Threshold: 0.610000, False positive items: 349
+Num hash functions:  50
+Threshold: 0.620000, False positive items: 289
+Num hash functions:  50
+Threshold: 0.630000, False positive items: 275
+Num hash functions:  49
+Threshold: 0.640000, False positive items: 254
+Num hash functions:  48
+Threshold: 0.650000, False positive items: 252
+Num hash functions:  46
+Threshold: 0.660000, False positive items: 251
+Num hash functions:  44
+Threshold: 0.670000, False positive items: 244
+Num hash functions:  42
+Threshold: 0.680000, False positive items: 234
+Num hash functions:  42
+Threshold: 0.690000, False positive items: 213
+Num hash functions:  41
+Threshold: 0.700000, False positive items: 210
+Num hash functions:  37
+Threshold: 0.710000, False positive items: 204
+Num hash functions:  36
+Threshold: 0.720000, False positive items: 204
+Num hash functions:  35
+Threshold: 0.730000, False positive items: 198
+Num hash functions:  34
+Threshold: 0.740000, False positive items: 196
+Num hash functions:  33
+Threshold: 0.750000, False positive items: 171
+Num hash functions:  33
+Threshold: 0.760000, False positive items: 170
+Num hash functions:  31
+Threshold: 0.770000, False positive items: 166
+Num hash functions:  30
+Threshold: 0.780000, False positive items: 166
+Num hash functions:  28
+Threshold: 0.790000, False positive items: 162
+Num hash functions:  27
+Threshold: 0.800000, False positive items: 141
+Num hash functions:  25
+Threshold: 0.810000, False positive items: 131
+Num hash functions:  24
+Threshold: 0.820000, False positive items: 128
+Num hash functions:  24
+Threshold: 0.830000, False positive items: 127
+Num hash functions:  23
+Threshold: 0.840000, False positive items: 104
+Num hash functions:  22
+Threshold: 0.850000, False positive items: 95
+Num hash functions:  21
+Threshold: 0.860000, False positive items: 92
+Num hash functions:  21
+Threshold: 0.870000, False positive items: 87
+Num hash functions:  21
+Threshold: 0.880000, False positive items: 86
+Num hash functions:  20
+Threshold: 0.890000, False positive items: 85
+Num hash functions:  19
+Threshold: 0.900000, False positive items: 81
+Num hash functions:  14
+Threshold: 0.910000, False positive items: 55
+Num hash functions:  12
+Threshold: 0.920000, False positive items: 55
+Num hash functions:  10
+Threshold: 0.930000, False positive items: 37
+Num hash functions:  10
+Threshold: 0.940000, False positive items: 38
+Num hash functions:  9
+Threshold: 0.950000, False positive items: 38
+False positive items: 115.0; FPR: 0.002782953802966871; Size of queries: 41323
+
+python Ada-BF.py --data_path ./Datasets/URL_data.csv --size_of_Ada_BF 200000  --num_group_min 8  --num_group_max 12  --c_min 1.6  --c_max 2.5
+False positive items: 2209, Number of groups: 8, c = 1.600000
+False positive items: 1907, Number of groups: 8, c = 1.700000
+False positive items: 1850, Number of groups: 8, c = 1.800000
+False positive items: 1999, Number of groups: 8, c = 1.900000
+False positive items: 1990, Number of groups: 8, c = 2.000000
+False positive items: 2289, Number of groups: 8, c = 2.100000
+False positive items: 2608, Number of groups: 8, c = 2.200000
+False positive items: 3089, Number of groups: 8, c = 2.300000
+False positive items: 3776, Number of groups: 8, c = 2.400000
+False positive items: 4380, Number of groups: 8, c = 2.500000
+False positive items: 1914, Number of groups: 9, c = 1.600000
+False positive items: 1880, Number of groups: 9, c = 1.700000
+False positive items: 2114, Number of groups: 9, c = 1.800000
+False positive items: 2434, Number of groups: 9, c = 1.900000
+False positive items: 2939, Number of groups: 9, c = 2.000000
+False positive items: 3314, Number of groups: 9, c = 2.100000
+False positive items: 4059, Number of groups: 9, c = 2.200000
+False positive items: 5130, Number of groups: 9, c = 2.300000
+False positive items: 5915, Number of groups: 9, c = 2.400000
+False positive items: 6214, Number of groups: 9, c = 2.500000
+False positive items: 1849, Number of groups: 10, c = 1.600000
+False positive items: 2055, Number of groups: 10, c = 1.700000
+False positive items: 2516, Number of groups: 10, c = 1.800000
+False positive items: 3307, Number of groups: 10, c = 1.900000
+False positive items: 4373, Number of groups: 10, c = 2.000000
+False positive items: 5056, Number of groups: 10, c = 2.100000
+False positive items: 6200, Number of groups: 10, c = 2.200000
+False positive items: 7036, Number of groups: 10, c = 2.300000
+False positive items: 8541, Number of groups: 10, c = 2.400000
+False positive items: 9456, Number of groups: 10, c = 2.500000
+False positive items: 2068, Number of groups: 11, c = 1.600000
+False positive items: 2607, Number of groups: 11, c = 1.700000
+False positive items: 3673, Number of groups: 11, c = 1.800000
+False positive items: 5287, Number of groups: 11, c = 1.900000
+False positive items: 6871, Number of groups: 11, c = 2.000000
+False positive items: 7727, Number of groups: 11, c = 2.100000
+False positive items: 9467, Number of groups: 11, c = 2.200000
+False positive items: 10072, Number of groups: 11, c = 2.300000
+False positive items: 12793, Number of groups: 11, c = 2.400000
+False positive items: 13684, Number of groups: 11, c = 2.500000
+False positive items: 2602, Number of groups: 12, c = 1.600000
+False positive items: 3941, Number of groups: 12, c = 1.700000
+False positive items: 6010, Number of groups: 12, c = 1.800000
+False positive items: 7907, Number of groups: 12, c = 1.900000
+False positive items: 9998, Number of groups: 12, c = 2.000000
+False positive items: 11372, Number of groups: 12, c = 2.100000
+False positive items: 13982, Number of groups: 12, c = 2.200000
+False positive items: 15514, Number of groups: 12, c = 2.300000
+False positive items: 16597, Number of groups: 12, c = 2.400000
+False positive items: 16263, Number of groups: 12, c = 2.500000
+False positive items: 6086.0; FPR: 0.01765086325656397; Size of queries: 344799
+
+python Ada-BF.py --data_path ./Datasets/Malware_data.csv --size_of_Ada_BF 200000  --num_group_min 8  --num_group_max 12  --c_min 1.6  --c_max 2.5
+False positive items: 129, Number of groups: 8, c = 1.600000
+False positive items: 81, Number of groups: 8, c = 1.700000
+False positive items: 72, Number of groups: 8, c = 1.800000
+False positive items: 49, Number of groups: 8, c = 1.900000
+False positive items: 34, Number of groups: 8, c = 2.000000
+False positive items: 28, Number of groups: 8, c = 2.100000
+False positive items: 20, Number of groups: 8, c = 2.200000
+False positive items: 24, Number of groups: 8, c = 2.300000
+False positive items: 20, Number of groups: 8, c = 2.400000
+False positive items: 14, Number of groups: 8, c = 2.500000
+False positive items: 78, Number of groups: 9, c = 1.600000
+False positive items: 52, Number of groups: 9, c = 1.700000
+False positive items: 45, Number of groups: 9, c = 1.800000
+False positive items: 24, Number of groups: 9, c = 1.900000
+False positive items: 20, Number of groups: 9, c = 2.000000
+False positive items: 15, Number of groups: 9, c = 2.100000
+False positive items: 22, Number of groups: 9, c = 2.200000
+False positive items: 16, Number of groups: 9, c = 2.300000
+False positive items: 21, Number of groups: 9, c = 2.400000
+False positive items: 22, Number of groups: 9, c = 2.500000
+False positive items: 47, Number of groups: 10, c = 1.600000
+False positive items: 48, Number of groups: 10, c = 1.700000
+False positive items: 26, Number of groups: 10, c = 1.800000
+False positive items: 14, Number of groups: 10, c = 1.900000
+False positive items: 18, Number of groups: 10, c = 2.000000
+False positive items: 16, Number of groups: 10, c = 2.100000
+False positive items: 15, Number of groups: 10, c = 2.200000
+False positive items: 22, Number of groups: 10, c = 2.300000
+False positive items: 32, Number of groups: 10, c = 2.400000
+False positive items: 35, Number of groups: 10, c = 2.500000
+False positive items: 45, Number of groups: 11, c = 1.600000
+False positive items: 30, Number of groups: 11, c = 1.700000
+False positive items: 18, Number of groups: 11, c = 1.800000
+False positive items: 19, Number of groups: 11, c = 1.900000
+False positive items: 16, Number of groups: 11, c = 2.000000
+False positive items: 22, Number of groups: 11, c = 2.100000
+False positive items: 17, Number of groups: 11, c = 2.200000
+False positive items: 12, Number of groups: 11, c = 2.300000
+False positive items: 17, Number of groups: 11, c = 2.400000
+False positive items: 20, Number of groups: 11, c = 2.500000
+False positive items: 24, Number of groups: 12, c = 1.600000
+False positive items: 19, Number of groups: 12, c = 1.700000
+False positive items: 17, Number of groups: 12, c = 1.800000
+False positive items: 12, Number of groups: 12, c = 1.900000
+False positive items: 15, Number of groups: 12, c = 2.000000
+False positive items: 16, Number of groups: 12, c = 2.100000
+False positive items: 15, Number of groups: 12, c = 2.200000
+False positive items: 16, Number of groups: 12, c = 2.300000
+False positive items: 14, Number of groups: 12, c = 2.400000
+False positive items: 21, Number of groups: 12, c = 2.500000
+False positive items: 67.0; FPR: 0.0016213730852067856; Size of queries: 41323
+
+
+
 Vary bf size, calculate memory, calculate speed
 140000 : 50,000 to 650,000
 
