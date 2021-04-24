@@ -6,61 +6,6 @@ from Bloom_filter import BloomFilter
 import os
 
 
-
-parser = argparse.ArgumentParser()
-parser.add_argument('--data_path', action="store", dest="data_path", type=str, required=True,
-                    help="path of the dataset")
-parser.add_argument('--model_path', action="store", dest="model_path", type=str, required=True,
-                    help="path of the model")
-parser.add_argument('--num_group_min', action="store", dest="min_group", type=int, required=True,
-                    help="Minimum number of groups")
-parser.add_argument('--num_group_max', action="store", dest="max_group", type=int, required=True,
-                    help="Maximum number of groups")
-parser.add_argument('--size_of_Ada_BF', action="store", dest="M_budget", type=int, required=True,
-                    help="memory budget")
-parser.add_argument('--c_min', action="store", dest="c_min", type=float, required=True,
-                    help="minimum ratio of the keys")
-parser.add_argument('--c_max', action="store", dest="c_max", type=float, required=True,
-                    help="maximum ratio of the keys")
-
-
-
-results = parser.parse_args()
-DATA_PATH = results.data_path
-num_group_min = results.min_group
-num_group_max = results.max_group
-model_size = os.path.getsize(results.model_path)
-R_sum = results.M_budget - model_size * 8
-c_min = results.c_min
-c_max = results.c_max
-
-
-'''
-Load the data and select training data
-'''
-data = pd.read_csv(DATA_PATH)
-negative_sample = data.loc[(data['label']==-1)]
-positive_sample = data.loc[(data['label']==1)]
-train_negative = negative_sample.sample(frac = 0.3)
-
-
-
-'''
-Plot the distribution of scores
-'''
-plt.style.use('seaborn-deep')
-
-x = data.loc[data['label']==1,'score']
-y = data.loc[data['label']==-1,'score']
-bins = np.linspace(0, 1, 25)
-
-plt.hist([x, y], bins, log=True, label=['Keys', 'non-Keys'])
-plt.legend(loc='upper right')
-plt.savefig('./Score_Dist.png')
-plt.show()
-
-
-
 def R_size(count_key, count_nonkey, R0):
     R = [0]*len(count_key)
     R[0] = max(R0,1)
@@ -69,7 +14,7 @@ def R_size(count_key, count_nonkey, R0):
     return R
 
 
-def Find_Optimal_Parameters(c_min, c_max, num_group_min, num_group_max, R_sum, train_negative, positive_sample):
+def Find_Optimal_Parameters(c_min, c_max, num_group_min, num_group_max, R_sum, train_negative, positive_sample, query_name):
     c_set = np.arange(c_min, c_max+10**(-6), 0.1)
     FP_opt = train_negative.shape[0]
 
@@ -103,7 +48,7 @@ def Find_Optimal_Parameters(c_min, c_max, num_group_min, num_group_max, R_sum, t
             thresholds = thresholds[-(num_group_1 + 1):]
 
             ### Count the keys of each group
-            query = positive_sample['query']
+            query = positive_sample[query_name]
             score = positive_sample['score']
 
             count_key = np.zeros(num_group_1)
@@ -139,8 +84,8 @@ def Find_Optimal_Parameters(c_min, c_max, num_group_min, num_group_max, R_sum, t
                     Bloom_Filters[j].insert(query_group[j])
 
             ### Test querys
-            ML_positive = train_negative.loc[(train_negative['score'] >= thresholds[-2]), 'query']
-            query_negative = train_negative.loc[(train_negative['score'] < thresholds[-2]), 'query']
+            ML_positive = train_negative.loc[(train_negative['score'] >= thresholds[-2]), query_name]
+            query_negative = train_negative.loc[(train_negative['score'] < thresholds[-2]), query_name]
             score_negative = train_negative.loc[(train_negative['score'] < thresholds[-2]), 'score']
 
             test_result = np.zeros(len(query_negative))
@@ -168,13 +113,101 @@ def Find_Optimal_Parameters(c_min, c_max, num_group_min, num_group_max, R_sum, t
 Implement disjoint Ada-BF
 '''
 if __name__ == '__main__':
-    '''Stage 1: Find the hyper-parameters'''
-    Bloom_Filters_opt, thresholds_opt, non_empty_ix_opt = Find_Optimal_Parameters(c_min, c_max, num_group_min, num_group_max, R_sum, train_negative, positive_sample)
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--data_path', action="store", dest="data_path", type=str, required=True,
+                        help="path of the dataset")
+    parser.add_argument('--model_path', action="store", dest="model_path", type=str, required=True,
+                        help="path of the model")
+    parser.add_argument('--num_group_min', action="store", dest="min_group", type=int, required=True,
+                        help="Minimum number of groups")
+    parser.add_argument('--num_group_max', action="store", dest="max_group", type=int, required=True,
+                        help="Maximum number of groups")
+    parser.add_argument('--size_of_Ada_BF', action="store", dest="M_budget", type=int, required=True,
+                        help="memory budget")
+    parser.add_argument('--c_min', action="store", dest="c_min", type=float, required=True,
+                        help="minimum ratio of the keys")
+    parser.add_argument('--c_max', action="store", dest="c_max", type=float, required=True,
+                        help="maximum ratio of the keys")
 
-    '''Stage 2: Run disjoint Ada-BF on all the samples'''
-    ### Test queries
-    ML_positive = negative_sample.loc[(negative_sample['score'] >= thresholds_opt[-2]), 'query']
-    query_negative = negative_sample.loc[(negative_sample['score'] < thresholds_opt[-2]), 'query']
+
+
+    results = parser.parse_args()
+    DATA_PATH = results.data_path
+    num_group_min = results.min_group
+    num_group_max = results.max_group
+    model_size = os.path.getsize(results.model_path)
+    R_sum = results.M_budget - model_size * 8
+    c_min = results.c_min
+    c_max = results.c_max
+
+
+    '''
+    Load the data and select training data
+    '''
+    dataset_name = DATA_PATH.split("/")[-1]
+    data = pd.read_csv(DATA_PATH)
+
+    if (dataset_name == "Malware_data.csv"):
+        '''
+        Load the data and select training data
+        '''
+        negative_sample = data.loc[(data['label']==0)]
+        positive_sample = data.loc[(data['label']==1)]
+        train_negative = negative_sample.sample(frac = 0.3)
+
+        '''
+        Plot the distribution of scores
+        '''
+        plt.style.use('seaborn-deep')
+
+        x = data.loc[data['label']==1,'score']
+        y = data.loc[data['label']==0,'score']
+        bins = np.linspace(0, 1, 25)
+
+        plt.hist([x, y], bins, log=True, label=['Keys', 'non-Keys'])
+        plt.legend(loc='upper right')
+        plt.savefig('./Malware_Score_Dist-disjoint.png')
+        plt.show()
+
+        '''Stage 1: Find the hyper-parameters'''
+        Bloom_Filters_opt, thresholds_opt, non_empty_ix_opt = Find_Optimal_Parameters(c_min, c_max, num_group_min, num_group_max, R_sum, train_negative, positive_sample, 'md5')
+        
+        '''Stage 2: Run disjoint Ada-BF on all the samples'''
+        ### Test queries
+        ML_positive = negative_sample.loc[(negative_sample['score'] >= thresholds_opt[-2]), 'md5']
+        query_negative = negative_sample.loc[(negative_sample['score'] < thresholds_opt[-2]), 'md5']
+    elif (dataset_name == "URL_data.csv"):
+        '''
+        Load the data and select training data
+        '''
+        negative_sample = data.loc[(data['label']==-1)]
+        positive_sample = data.loc[(data['label']==1)]
+        train_negative = negative_sample.sample(frac = 0.3)
+
+        '''
+        Plot the distribution of scores
+        '''
+        plt.style.use('seaborn-deep')
+
+        x = data.loc[data['label']==1,'score']
+        y = data.loc[data['label']==-1,'score']
+        bins = np.linspace(0, 1, 25)
+
+        plt.hist([x, y], bins, log=True, label=['Keys', 'non-Keys'])
+        plt.legend(loc='upper right')
+        plt.savefig('./URL_Score_Dist-disjoint.png')
+        plt.show()
+
+        '''Stage 1: Find the hyper-parameters'''
+        Bloom_Filters_opt, thresholds_opt, non_empty_ix_opt = Find_Optimal_Parameters(c_min, c_max, num_group_min, num_group_max, R_sum, train_negative, positive_sample, 'url')
+
+        '''Stage 2: Run disjoint Ada-BF on all the samples'''
+        ### Test queries
+        ML_positive = negative_sample.loc[(negative_sample['score'] >= thresholds_opt[-2]), 'url']
+        query_negative = negative_sample.loc[(negative_sample['score'] < thresholds_opt[-2]), 'url']
+    else:
+        print("Should not reach this case")
+
     score_negative = negative_sample.loc[(negative_sample['score'] < thresholds_opt[-2]), 'score']
     test_result = np.zeros(len(query_negative))
     ss = 0
