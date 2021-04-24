@@ -4,35 +4,6 @@ import argparse
 from Bloom_filter import BloomFilter
 
 
-parser = argparse.ArgumentParser()
-parser.add_argument('--data_path', action="store", dest="data_path", type=str, required=True,
-                    help="path of the dataset")
-parser.add_argument('--threshold_min', action="store", dest="min_thres", type=float, required=True,
-                    help="Minimum threshold for positive samples")
-parser.add_argument('--threshold_max', action="store", dest="max_thres", type=float, required=True,
-                    help="Maximum threshold for positive samples")
-parser.add_argument('--size_of_LBF', action="store", dest="R_sum", type=int, required=True,
-                    help="size of the LBF")
-
-
-
-
-results = parser.parse_args()
-DATA_PATH = results.data_path
-min_thres = results.min_thres
-max_thres = results.max_thres
-R_sum = results.R_sum
-
-
-'''
-Load the data and select training data
-'''
-data = pd.read_csv(DATA_PATH)
-negative_sample = data.loc[(data['label']==-1)]
-positive_sample = data.loc[(data['label']==1)]
-train_negative = negative_sample.sample(frac = 0.3)
-
-
 def Find_Optimal_Parameters(max_thres, min_thres, R_sum, train_negative, positive_sample):
     FP_opt = train_negative.shape[0]
 
@@ -59,6 +30,30 @@ def Find_Optimal_Parameters(max_thres, min_thres, R_sum, train_negative, positiv
 Implement learned Bloom filter
 '''
 if __name__ == '__main__':
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--data_path', action="store", dest="data_path", type=str, required=True,
+                        help="path of the dataset")
+    parser.add_argument('--threshold_min', action="store", dest="min_thres", type=float, required=True,
+                        help="Minimum threshold for positive samples")
+    parser.add_argument('--threshold_max', action="store", dest="max_thres", type=float, required=True,
+                        help="Maximum threshold for positive samples")
+    parser.add_argument('--size_of_LBF', action="store", dest="R_sum", type=int, required=True,
+                        help="size of the LBF")
+
+    results = parser.parse_args()
+    DATA_PATH = results.data_path
+    min_thres = results.min_thres
+    max_thres = results.max_thres
+    R_sum = results.R_sum
+
+    '''
+    Load the data and select training data
+    '''
+    data = pd.read_csv(DATA_PATH)
+    negative_sample = data.loc[(data['label']==-1)]
+    positive_sample = data.loc[(data['label']==1)]
+    train_negative = negative_sample.sample(frac = 0.3)
+
     '''Stage 1: Find the hyper-parameters (spare 30% samples to find the parameters)'''
     bloom_filter_opt, thres_opt = Find_Optimal_Parameters(max_thres, min_thres, R_sum, train_negative, positive_sample)
 
