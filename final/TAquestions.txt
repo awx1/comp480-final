@@ -5,7 +5,31 @@ Understand datasets: where did the datasets come from.
 Where did the score come from?
 
 Learned Bloom Filter: Why is the negative testing data being reduced?
-- Importance of first settign the negative dataset and then 
+- Importance of first setting the negative dataset and then 
 
 disjoint ada-bf:
 - What is model path, importantance of R_sum
+
+Implementation Notes
+- Closer to 1 (0,1) or Closer 0 (-1,0) => malcious
+- Hash title: before or after clean, shouldn't matter
+- Tackle different partioning methods, jenk's natural breaks?
+
+Paper Notes
+Use a machine learning mode as a pre-filter.
+- Give each query a score that is asociated with the probability that the query is in the set
+	- Should be calculated using observable features
+
+Ada-BF tunes the number of hash function differently in different regions to adjust the FPR adaptively
+Disjoint Ada-BF allocates variable memory Bloom filters to each region
+Results: Compared to learned bloom filters
+- Reduce the FPR by over 80%
+- Save 50% of memory usage
+
+Learned Bloom Filter
+- Pre-trained to classify whether any specific query belongs to the set of keys
+- Binary training: sets a numeric threshold to determine the previous classification
+- Decreases the number of keys to examine by the bloom filter
+- False positives come from incorrect binary classifcation + false positive from the bloom filter
+- Tradeoff
+	- Higher positive keys identified by classifier means lower FPR from bloom filter due to lesser chance of collisions -> We want to also minimize the numebr of positvies, higher threshold value. -> Higher threshhold value means increase

@@ -309,3 +309,5 @@ Vary bf size, calculate memory, calculate speed
 
 Between filters, compare the size required for each bloom filter to reach the same false positive rate.
 
+
+Testing Acc. of Random Forest: 89.79 %

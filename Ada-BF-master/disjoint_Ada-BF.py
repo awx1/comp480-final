@@ -220,4 +220,4 @@ if __name__ == '__main__':
         ss += 1
     FP_items = sum(test_result) + len(ML_positive)
     FPR = FP_items/len(query_negative)
-    print('False positive items: {}; FPR: {}; Size of quries: {}'.format(FP_items, FPR, len(query_negative)))
+    print('False positive items: {}; FPR: {}; Size of queries: {}'.format(FP_items, FPR, len(query_negative)))
