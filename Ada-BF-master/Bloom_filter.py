@@ -107,6 +107,14 @@ if __name__ == '__main__':
         query = positive_sample['url']
         # query_negative = negative_sample['query']
         query_negative = negative_sample['url']
+    elif (dataset_name == "Fake_news_score_clean.csv"):
+        negative_sample = data.loc[(data['label'] == -1)]
+        positive_sample = data.loc[(data['label'] == 1)]
+
+        # query = positive_sample['query']
+        query = positive_sample['title']
+        # query_negative = negative_sample['query']
+        query_negative = negative_sample['title']
     else:
         print("Should not reach this case")
     n = len(query)

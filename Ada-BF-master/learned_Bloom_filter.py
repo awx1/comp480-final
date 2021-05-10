@@ -76,6 +76,21 @@ if __name__ == '__main__':
         ### Test queries
         ML_positive = negative_sample.loc[(negative_sample['score'] > thres_opt), 'url']
         bloom_negative = negative_sample.loc[(negative_sample['score'] <= thres_opt), 'url']
+     elif (dataset_name == "Fake_news_score_clean.csv"):
+        '''
+        Load the data and select training data
+        '''
+        negative_sample = data.loc[(data['label']==0)]
+        positive_sample = data.loc[(data['label']==1)]
+        train_negative = negative_sample.sample(frac = 0.3)
+
+        '''Stage 1: Find the hyper-parameters (spare 30% samples to find the parameters)'''
+        bloom_filter_opt, thres_opt = Find_Optimal_Parameters(max_thres, min_thres, R_sum, train_negative, positive_sample, 'title')
+
+        '''Stage 2: Run LBF on all the samples'''
+        ### Test queries
+        ML_positive = negative_sample.loc[(negative_sample['score'] > thres_opt), 'title']
+        bloom_negative = negative_sample.loc[(negative_sample['score'] <= thres_opt), 'title']
     else:
         print("Should not reach this case")
 

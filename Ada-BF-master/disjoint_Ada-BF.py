@@ -205,6 +205,34 @@ if __name__ == '__main__':
         ### Test queries
         ML_positive = negative_sample.loc[(negative_sample['score'] >= thresholds_opt[-2]), 'url']
         query_negative = negative_sample.loc[(negative_sample['score'] < thresholds_opt[-2]), 'url']
+    elif (dataset_name == "Fake_news_score_clean.csv"):
+        '''
+        Load the data and select training data
+        '''
+        negative_sample = data.loc[(data['label']==0)]
+        positive_sample = data.loc[(data['label']==1)]
+        train_negative = negative_sample.sample(frac = 0.3)
+        '''
+        Plot the distribution of scores
+        '''
+        plt.style.use('seaborn-deep')
+
+        x = data.loc[data['label']==1,'score']
+        y = data.loc[data['label']==0,'score']
+        bins = np.linspace(0, 1, 25)
+
+        plt.hist([x, y], bins, log=True, label=['Keys', 'non-Keys'])
+        plt.legend(loc='upper right')
+        plt.savefig('./FakeNews_Score_Dist-disjoint.png')
+        plt.show()
+
+        '''Stage 1: Find the hyper-parameters'''
+        Bloom_Filters_opt, thresholds_opt, non_empty_ix_opt = Find_Optimal_Parameters(c_min, c_max, num_group_min, num_group_max, R_sum, train_negative, positive_sample, 'title')
+
+        '''Stage 2: Run disjoint Ada-BF on all the samples'''
+        ### Test queries
+        ML_positive = negative_sample.loc[(negative_sample['score'] >= thresholds_opt[-2]), 'title']
+        query_negative = negative_sample.loc[(negative_sample['score'] < thresholds_opt[-2]), 'title']
     else:
         print("Should not reach this case")
 

@@ -309,5 +309,1118 @@ Vary bf size, calculate memory, calculate speed
 
 Between filters, compare the size required for each bloom filter to reach the same false positive rate.
 
-
 Testing Acc. of Random Forest: 89.79 %
+
+
+python Ada-BF.py --data_path ./Datasets-fakenews/Fake_news_score_clean.csv --size_of_Ada_BF 200000  --num_group_min 8  --num_group_max 12  --c_min 1.6  --c_max 2.5
+False positive items: 525, Number of groups: 8, c = 1.600000
+False positive items: 313, Number of groups: 8, c = 1.700000
+False positive items: 229, Number of groups: 8, c = 1.800000
+False positive items: 155, Number of groups: 8, c = 1.900000
+False positive items: 110, Number of groups: 8, c = 2.000000
+False positive items: 87, Number of groups: 8, c = 2.100000
+False positive items: 67, Number of groups: 8, c = 2.200000
+False positive items: 49, Number of groups: 8, c = 2.300000
+False positive items: 37, Number of groups: 8, c = 2.400000
+False positive items: 23, Number of groups: 8, c = 2.500000
+False positive items: 322, Number of groups: 9, c = 1.600000
+False positive items: 204, Number of groups: 9, c = 1.700000
+False positive items: 125, Number of groups: 9, c = 1.800000
+False positive items: 101, Number of groups: 9, c = 1.900000
+False positive items: 66, Number of groups: 9, c = 2.000000
+False positive items: 45, Number of groups: 9, c = 2.100000
+False positive items: 26, Number of groups: 9, c = 2.200000
+False positive items: 22, Number of groups: 9, c = 2.300000
+False positive items: 19, Number of groups: 9, c = 2.400000
+False positive items: 15, Number of groups: 9, c = 2.500000
+False positive items: 201, Number of groups: 10, c = 1.600000
+False positive items: 128, Number of groups: 10, c = 1.700000
+False positive items: 80, Number of groups: 10, c = 1.800000
+False positive items: 43, Number of groups: 10, c = 1.900000
+False positive items: 33, Number of groups: 10, c = 2.000000
+False positive items: 21, Number of groups: 10, c = 2.100000
+False positive items: 15, Number of groups: 10, c = 2.200000
+False positive items: 13, Number of groups: 10, c = 2.300000
+False positive items: 8, Number of groups: 10, c = 2.400000
+False positive items: 8, Number of groups: 10, c = 2.500000
+False positive items: 127, Number of groups: 11, c = 1.600000
+False positive items: 74, Number of groups: 11, c = 1.700000
+False positive items: 44, Number of groups: 11, c = 1.800000
+False positive items: 24, Number of groups: 11, c = 1.900000
+False positive items: 19, Number of groups: 11, c = 2.000000
+False positive items: 12, Number of groups: 11, c = 2.100000
+False positive items: 7, Number of groups: 11, c = 2.200000
+False positive items: 7, Number of groups: 11, c = 2.300000
+False positive items: 4, Number of groups: 11, c = 2.400000
+False positive items: 8, Number of groups: 11, c = 2.500000
+False positive items: 80, Number of groups: 12, c = 1.600000
+False positive items: 42, Number of groups: 12, c = 1.700000
+False positive items: 23, Number of groups: 12, c = 1.800000
+False positive items: 15, Number of groups: 12, c = 1.900000
+False positive items: 10, Number of groups: 12, c = 2.000000
+False positive items: 8, Number of groups: 12, c = 2.100000
+False positive items: 7, Number of groups: 12, c = 2.200000
+False positive items: 7, Number of groups: 12, c = 2.300000
+False positive items: 6, Number of groups: 12, c = 2.400000
+False positive items: 2, Number of groups: 12, c = 2.500000
+False positive items: 9.0; FPR: 5.398823056573667e-05; Size of queries: 166703
+
+python Ada-BF.py --data_path ./Datasets-fakenews/Fake_news_score_clean.csv --size_of_Ada_BF 20000  --num_group_min 8  --num_group_max 12  --c_min 1.6  --c_max 2.5
+False positive items: 817, Number of groups: 8, c = 1.600000
+False positive items: 604, Number of groups: 8, c = 1.700000
+False positive items: 503, Number of groups: 8, c = 1.800000
+False positive items: 488, Number of groups: 8, c = 1.900000
+False positive items: 480, Number of groups: 8, c = 2.000000
+False positive items: 533, Number of groups: 8, c = 2.100000
+False positive items: 655, Number of groups: 8, c = 2.200000
+False positive items: 900, Number of groups: 8, c = 2.300000
+False positive items: 1070, Number of groups: 8, c = 2.400000
+False positive items: 1334, Number of groups: 8, c = 2.500000
+False positive items: 590, Number of groups: 9, c = 1.600000
+False positive items: 479, Number of groups: 9, c = 1.700000
+False positive items: 449, Number of groups: 9, c = 1.800000
+False positive items: 506, Number of groups: 9, c = 1.900000
+False positive items: 669, Number of groups: 9, c = 2.000000
+False positive items: 892, Number of groups: 9, c = 2.100000
+False positive items: 1207, Number of groups: 9, c = 2.200000
+False positive items: 1753, Number of groups: 9, c = 2.300000
+False positive items: 2304, Number of groups: 9, c = 2.400000
+False positive items: 4778, Number of groups: 9, c = 2.500000
+False positive items: 480, Number of groups: 10, c = 1.600000
+False positive items: 439, Number of groups: 10, c = 1.700000
+False positive items: 497, Number of groups: 10, c = 1.800000
+False positive items: 782, Number of groups: 10, c = 1.900000
+False positive items: 1144, Number of groups: 10, c = 2.000000
+False positive items: 1696, Number of groups: 10, c = 2.100000
+False positive items: 2443, Number of groups: 10, c = 2.200000
+False positive items: 5610, Number of groups: 10, c = 2.300000
+False positive items: 7925, Number of groups: 10, c = 2.400000
+False positive items: 10359, Number of groups: 10, c = 2.500000
+False positive items: 481, Number of groups: 11, c = 1.600000
+False positive items: 532, Number of groups: 11, c = 1.700000
+False positive items: 770, Number of groups: 11, c = 1.800000
+False positive items: 1285, Number of groups: 11, c = 1.900000
+False positive items: 2164, Number of groups: 11, c = 2.000000
+False positive items: 5247, Number of groups: 11, c = 2.100000
+False positive items: 8468, Number of groups: 11, c = 2.200000
+False positive items: 14614, Number of groups: 11, c = 2.300000
+False positive items: 22416, Number of groups: 11, c = 2.400000
+False positive items: 19433, Number of groups: 11, c = 2.500000
+False positive items: 484, Number of groups: 12, c = 1.600000
+False positive items: 764, Number of groups: 12, c = 1.700000
+False positive items: 1384, Number of groups: 12, c = 1.800000
+False positive items: 2831, Number of groups: 12, c = 1.900000
+False positive items: 6396, Number of groups: 12, c = 2.000000
+False positive items: 12358, Number of groups: 12, c = 2.100000
+False positive items: 14636, Number of groups: 12, c = 2.200000
+False positive items: 21853, Number of groups: 12, c = 2.300000
+False positive items: 31086, Number of groups: 12, c = 2.400000
+False positive items: 30095, Number of groups: 12, c = 2.500000
+False positive items: 1469.0; FPR: 0.008812078966785241; Size of queries: 166703
+
+Parameters:  (100, 100)
+Testing Acc. of Random Forest: 89.97 %
+[425.847793340683, 670.7366049289703]
+257062017
+Parameters:  (100, 150)
+Testing Acc. of Random Forest: 89.98 %
+[469.4426488876343, 747.4409320354462]
+249402497
+Parameters:  (150, 150)
+Testing Acc. of Random Forest: 89.94 %
+[369.8174960613251, 707.3461828231812]
+252250379
+Parameters:  (150, 200)
+Testing Acc. of Random Forest: 90.03 %
+[567.2840929031372, 1636.4841783046722]
+244662673
+Parameters:  (200, 200)
+Testing Acc. of Random Forest: 89.97 %
+[491.5314600467682, 805.4151256084442]
+244941679
+Parameters:  (200, 250)
+Testing Acc. of Random Forest: 90.18 %
+[367.63267397880554, 860.1726777553558]
+238657275
+Parameters:  (250, 250)
+Testing Acc. of Random Forest: 90.12 %
+[366.93501687049866, 1039.0540840625763]
+243037576
+Parameters:  (250, 300)
+Testing Acc. of Random Forest: 90.18 %
+[483.58686900138855, 1162.4375381469727]
+238265870
+Parameters:  (300, 300)
+Testing Acc. of Random Forest: 90.17 %
+[366.52206587791443, 1003.4364280700684]
+239699039
+
+Parameters:  (10, 10)
+Testing Acc. of Random Forest: 86.72 %
+[525.9834680557251, 345.2030668258667]
+296502033
+Parameters:  (10, 15)
+Testing Acc. of Random Forest: 88.02 %
+[450.20822405815125, 426.30076599121094]
+282220161
+Parameters:  (15, 15)
+Testing Acc. of Random Forest: 88.22 %
+[447.55508613586426, 338.67475986480713]
+299925409
+Parameters:  (15, 20)
+Testing Acc. of Random Forest: 88.66 %
+[452.27615213394165, 386.27835607528687]
+296810737
+Parameters:  (20, 20)
+Testing Acc. of Random Forest: 88.72 %
+[429.2247929573059, 394.6688997745514]
+292412849
+Parameters:  (20, 25)
+Testing Acc. of Random Forest: 88.87 %
+[411.90192890167236, 378.43242383003235]
+289218977
+Parameters:  (25, 25)
+Testing Acc. of Random Forest: 88.98 %
+[426.01277804374695, 400.75459003448486]
+284609713
+Parameters:  (25, 30)
+Testing Acc. of Random Forest: 89.06 %
+[418.1641221046448, 403.07065200805664]
+281870801
+Parameters:  (30, 30)
+Testing Acc. of Random Forest: 89.1 %
+[447.06095600128174, 446.39660716056824]
+290015025
+
+Hyperparameter toggling: Number of decision trees
+Num Estimators: 10
+Testing Acc. of Random Forest: 81.42 %
+Time: 9.46138620376587
+39642
+Num Estimators: 11
+Testing Acc. of Random Forest: 81.51 %
+Time: 9.049004077911377
+43475
+Num Estimators: 12
+Testing Acc. of Random Forest: 81.48 %
+Time: 7.322540044784546
+47308
+Num Estimators: 13
+Testing Acc. of Random Forest: 81.48 %
+Time: 6.906100034713745
+51141
+Num Estimators: 14
+Testing Acc. of Random Forest: 81.5 %
+Time: 6.542629241943359
+54974
+Num Estimators: 15
+Testing Acc. of Random Forest: 81.53 %
+Time: 7.5567920207977295
+58807
+Num Estimators: 16
+Testing Acc. of Random Forest: 81.48 %
+Time: 9.81050705909729
+62640
+Num Estimators: 17
+Testing Acc. of Random Forest: 81.52 %
+Time: 8.426517009735107
+66482
+Num Estimators: 18
+Testing Acc. of Random Forest: 81.48 %
+Time: 7.9205052852630615
+70315
+Num Estimators: 19
+Testing Acc. of Random Forest: 81.47 %
+Time: 7.530449151992798
+74148
+Num Estimators: 20
+Testing Acc. of Random Forest: 81.42 %
+Time: 6.462399959564209
+77981
+Num Estimators: 21
+Testing Acc. of Random Forest: 81.51 %
+Time: 7.350894927978516
+81814
+Num Estimators: 22
+Testing Acc. of Random Forest: 81.53 %
+Time: 6.900876045227051
+85647
+Num Estimators: 23
+Testing Acc. of Random Forest: 81.47 %
+Time: 8.930207967758179
+89480
+Num Estimators: 24
+Testing Acc. of Random Forest: 81.48 %
+Time: 8.901657104492188
+93313
+Num Estimators: 25
+Testing Acc. of Random Forest: 81.49 %
+Time: 13.632077932357788
+97146
+Num Estimators: 26
+Testing Acc. of Random Forest: 81.43 %
+Time: 11.967336893081665
+100979
+Num Estimators: 27
+Testing Acc. of Random Forest: 81.55 %
+Time: 11.698716878890991
+104812
+Num Estimators: 28
+Testing Acc. of Random Forest: 81.46 %
+Time: 9.510106086730957
+108645
+Num Estimators: 29
+Testing Acc. of Random Forest: 81.51 %
+Time: 9.042578220367432
+112478
+Num Estimators: 30
+Testing Acc. of Random Forest: 81.52 %
+Time: 9.688452005386353
+116311
+Num Estimators: 31
+Testing Acc. of Random Forest: 81.44 %
+Time: 8.585867643356323
+120144
+Num Estimators: 32
+Testing Acc. of Random Forest: 81.49 %
+Time: 12.187222003936768
+123977
+Num Estimators: 33
+Testing Acc. of Random Forest: 81.52 %
+Time: 10.783380270004272
+127810
+Num Estimators: 34
+Testing Acc. of Random Forest: 81.49 %
+Time: 12.161004781723022
+131643
+Num Estimators: 35
+Testing Acc. of Random Forest: 81.53 %
+Time: 10.500844240188599
+135485
+Num Estimators: 36
+Testing Acc. of Random Forest: 81.47 %
+Time: 11.700587034225464
+139318
+Num Estimators: 37
+Testing Acc. of Random Forest: 81.47 %
+Time: 12.818412780761719
+143151
+Num Estimators: 38
+Testing Acc. of Random Forest: 81.47 %
+Time: 11.01998782157898
+146984
+Num Estimators: 39
+Testing Acc. of Random Forest: 81.43 %
+Time: 14.799631118774414
+150817
+Num Estimators: 40
+Testing Acc. of Random Forest: 81.54 %
+Time: 11.253309965133667
+154650
+Num Estimators: 41
+Testing Acc. of Random Forest: 81.47 %
+Time: 12.442915201187134
+158483
+Num Estimators: 42
+Testing Acc. of Random Forest: 81.46 %
+Time: 12.571706056594849
+162316
+Num Estimators: 43
+Testing Acc. of Random Forest: 81.46 %
+Time: 13.396498918533325
+166149
+Num Estimators: 44
+Testing Acc. of Random Forest: 81.44 %
+Time: 10.998326063156128
+169982
+Num Estimators: 45
+Testing Acc. of Random Forest: 81.45 %
+Time: 16.356251001358032
+173815
+Num Estimators: 46
+Testing Acc. of Random Forest: 81.42 %
+Time: 12.010229110717773
+177648
+Num Estimators: 47
+Testing Acc. of Random Forest: 81.48 %
+Time: 13.20677924156189
+181481
+Num Estimators: 48
+Testing Acc. of Random Forest: 81.46 %
+Time: 13.81196904182434
+185314
+Num Estimators: 49
+Testing Acc. of Random Forest: 81.45 %
+Time: 14.039178133010864
+189147
+
+Hyperparameter toggling: Max number of leaves
+Max leaf nodes: 10
+Testing Acc. of Random Forest: 81.38 %
+Time: 5.348802089691162
+22042
+Max leaf nodes: 11
+Testing Acc. of Random Forest: 81.4 %
+Time: 4.817168951034546
+23802
+Max leaf nodes: 12
+Testing Acc. of Random Forest: 81.38 %
+Time: 4.686689853668213
+25562
+Max leaf nodes: 13
+Testing Acc. of Random Forest: 81.4 %
+Time: 5.867702960968018
+27322
+Max leaf nodes: 14
+Testing Acc. of Random Forest: 81.48 %
+Time: 5.144207000732422
+29082
+Max leaf nodes: 15
+Testing Acc. of Random Forest: 81.47 %
+Time: 5.296856164932251
+30842
+Max leaf nodes: 16
+Testing Acc. of Random Forest: 81.45 %
+Time: 5.357018232345581
+32602
+Max leaf nodes: 17
+Testing Acc. of Random Forest: 81.39 %
+Time: 5.606316089630127
+34362
+Max leaf nodes: 18
+Testing Acc. of Random Forest: 81.44 %
+Time: 5.742682933807373
+36122
+Max leaf nodes: 19
+Testing Acc. of Random Forest: 81.47 %
+Time: 5.548540115356445
+37882
+Max leaf nodes: 20
+Testing Acc. of Random Forest: 81.53 %
+Time: 6.621036052703857
+39642
+Max leaf nodes: 21
+Testing Acc. of Random Forest: 81.42 %
+Time: 6.8405070304870605
+41402
+Max leaf nodes: 22
+Testing Acc. of Random Forest: 81.48 %
+Time: 6.149121999740601
+43162
+Max leaf nodes: 23
+Testing Acc. of Random Forest: 81.48 %
+Time: 5.639371633529663
+44922
+Max leaf nodes: 24
+Testing Acc. of Random Forest: 81.49 %
+Time: 5.25888204574585
+46682
+Max leaf nodes: 25
+Testing Acc. of Random Forest: 81.53 %
+Time: 5.349142074584961
+48442
+Max leaf nodes: 26
+Testing Acc. of Random Forest: 81.54 %
+Time: 5.422236919403076
+50202
+Max leaf nodes: 27
+Testing Acc. of Random Forest: 81.52 %
+Time: 5.41109824180603
+51962
+Max leaf nodes: 28
+Testing Acc. of Random Forest: 81.58 %
+Time: 5.951267719268799
+53722
+Max leaf nodes: 29
+Testing Acc. of Random Forest: 81.54 %
+Time: 5.284160137176514
+55482
+Max leaf nodes: 30
+Testing Acc. of Random Forest: 81.59 %
+Time: 5.214709997177124
+57242
+Max leaf nodes: 31
+Testing Acc. of Random Forest: 81.58 %
+Time: 5.405361890792847
+59002
+Max leaf nodes: 32
+Testing Acc. of Random Forest: 81.53 %
+Time: 5.543951988220215
+60762
+Max leaf nodes: 33
+Testing Acc. of Random Forest: 81.61 %
+Time: 9.44692087173462
+62522
+Max leaf nodes: 34
+Testing Acc. of Random Forest: 81.62 %
+Time: 7.806921005249023
+64282
+Max leaf nodes: 35
+Testing Acc. of Random Forest: 81.66 %
+Time: 6.93330979347229
+66051
+Max leaf nodes: 36
+Testing Acc. of Random Forest: 81.6 %
+Time: 5.867081880569458
+67811
+Max leaf nodes: 37
+Testing Acc. of Random Forest: 81.62 %
+Time: 6.1976540088653564
+69571
+Max leaf nodes: 38
+Testing Acc. of Random Forest: 81.56 %
+Time: 5.832115888595581
+71331
+Max leaf nodes: 39
+Testing Acc. of Random Forest: 81.58 %
+Time: 5.979905128479004
+73091
+Max leaf nodes: 40
+Testing Acc. of Random Forest: 81.6 %
+Time: 5.852679014205933
+74851
+Max leaf nodes: 41
+Testing Acc. of Random Forest: 81.68 %
+Time: 5.645503997802734
+76611
+Max leaf nodes: 42
+Testing Acc. of Random Forest: 81.6 %
+Time: 6.163644075393677
+78371
+Max leaf nodes: 43
+Testing Acc. of Random Forest: 81.68 %
+Time: 5.9565629959106445
+80131
+Max leaf nodes: 44
+Testing Acc. of Random Forest: 81.69 %
+Time: 7.342451095581055
+81891
+Max leaf nodes: 45
+Testing Acc. of Random Forest: 81.67 %
+Time: 6.327209949493408
+83651
+Max leaf nodes: 46
+Testing Acc. of Random Forest: 81.63 %
+Time: 6.446439743041992
+85411
+Max leaf nodes: 47
+Testing Acc. of Random Forest: 81.61 %
+Time: 6.373739957809448
+87171
+Max leaf nodes: 48
+Testing Acc. of Random Forest: 81.69 %
+Time: 7.092988967895508
+88931
+Max leaf nodes: 49
+Testing Acc. of Random Forest: 81.68 %
+Time: 6.036559104919434
+90691
+
+python Ada-BF.py --data_path ./Datasets-fakenews/Fake_news_score_clean.csv --size_of_Ada_BF 20000  --num_group_min 8  --num_group_max 12  --c_min 1.6  --c_max 2.5
+False positive items: 47722, Number of groups: 8, c = 1.600000
+False positive items: 48330, Number of groups: 8, c = 1.700000
+False positive items: 48926, Number of groups: 8, c = 1.800000
+False positive items: 48776, Number of groups: 8, c = 1.900000
+False positive items: 49418, Number of groups: 8, c = 2.000000
+False positive items: 49535, Number of groups: 8, c = 2.100000
+False positive items: 49527, Number of groups: 8, c = 2.200000
+False positive items: 49633, Number of groups: 8, c = 2.300000
+False positive items: 49617, Number of groups: 8, c = 2.400000
+False positive items: 49808, Number of groups: 8, c = 2.500000
+False positive items: 49181, Number of groups: 9, c = 1.600000
+False positive items: 49229, Number of groups: 9, c = 1.700000
+False positive items: 49592, Number of groups: 9, c = 1.800000
+False positive items: 49823, Number of groups: 9, c = 1.900000
+False positive items: 49723, Number of groups: 9, c = 2.000000
+False positive items: 49776, Number of groups: 9, c = 2.100000
+False positive items: 49956, Number of groups: 9, c = 2.200000
+False positive items: 49911, Number of groups: 9, c = 2.300000
+False positive items: 49943, Number of groups: 9, c = 2.400000
+False positive items: 49947, Number of groups: 9, c = 2.500000
+False positive items: 49577, Number of groups: 10, c = 1.600000
+False positive items: 49627, Number of groups: 10, c = 1.700000
+False positive items: 49902, Number of groups: 10, c = 1.800000
+False positive items: 49842, Number of groups: 10, c = 1.900000
+False positive items: 49962, Number of groups: 10, c = 2.000000
+False positive items: 49971, Number of groups: 10, c = 2.100000
+False positive items: 49972, Number of groups: 10, c = 2.200000
+False positive items: 49982, Number of groups: 10, c = 2.300000
+False positive items: 49989, Number of groups: 10, c = 2.400000
+False positive items: 50011, Number of groups: 10, c = 2.500000
+False positive items: 49968, Number of groups: 11, c = 1.600000
+False positive items: 50011, Number of groups: 11, c = 1.700000
+False positive items: 49937, Number of groups: 11, c = 1.800000
+False positive items: 50011, Number of groups: 11, c = 1.900000
+False positive items: 49985, Number of groups: 11, c = 2.000000
+False positive items: 50011, Number of groups: 11, c = 2.100000
+False positive items: 50011, Number of groups: 11, c = 2.200000
+False positive items: 49979, Number of groups: 11, c = 2.300000
+False positive items: 49983, Number of groups: 11, c = 2.400000
+False positive items: 50011, Number of groups: 11, c = 2.500000
+False positive items: 49976, Number of groups: 12, c = 1.600000
+False positive items: 49972, Number of groups: 12, c = 1.700000
+False positive items: 50011, Number of groups: 12, c = 1.800000
+False positive items: 50011, Number of groups: 12, c = 1.900000
+False positive items: 50011, Number of groups: 12, c = 2.000000
+False positive items: 50011, Number of groups: 12, c = 2.100000
+False positive items: 50011, Number of groups: 12, c = 2.200000
+False positive items: 50011, Number of groups: 12, c = 2.300000
+False positive items: 50011, Number of groups: 12, c = 2.400000
+False positive items: 49987, Number of groups: 12, c = 2.500000
+False positive items: 158878.0; FPR: 0.9530602328692345; Size of queries: 166703
+
+python Ada-BF.py --data_path ./Datasets-fakenews/Fake_news_score_clean.csv --size_of_Ada_BF 200000  --num_group_min 8  --num_group_max 12  --c_min 1.6  --c_max 2.5
+False positive items: 1039, Number of groups: 8, c = 1.600000
+False positive items: 801, Number of groups: 8, c = 1.700000
+False positive items: 706, Number of groups: 8, c = 1.800000
+False positive items: 602, Number of groups: 8, c = 1.900000
+False positive items: 506, Number of groups: 8, c = 2.000000
+False positive items: 535, Number of groups: 8, c = 2.100000
+False positive items: 509, Number of groups: 8, c = 2.200000
+False positive items: 481, Number of groups: 8, c = 2.300000
+False positive items: 483, Number of groups: 8, c = 2.400000
+False positive items: 463, Number of groups: 8, c = 2.500000
+False positive items: 794, Number of groups: 9, c = 1.600000
+False positive items: 657, Number of groups: 9, c = 1.700000
+False positive items: 536, Number of groups: 9, c = 1.800000
+False positive items: 498, Number of groups: 9, c = 1.900000
+False positive items: 477, Number of groups: 9, c = 2.000000
+False positive items: 498, Number of groups: 9, c = 2.100000
+False positive items: 482, Number of groups: 9, c = 2.200000
+False positive items: 518, Number of groups: 9, c = 2.300000
+False positive items: 488, Number of groups: 9, c = 2.400000
+False positive items: 483, Number of groups: 9, c = 2.500000
+False positive items: 643, Number of groups: 10, c = 1.600000
+False positive items: 555, Number of groups: 10, c = 1.700000
+False positive items: 501, Number of groups: 10, c = 1.800000
+False positive items: 475, Number of groups: 10, c = 1.900000
+False positive items: 448, Number of groups: 10, c = 2.000000
+False positive items: 515, Number of groups: 10, c = 2.100000
+False positive items: 512, Number of groups: 10, c = 2.200000
+False positive items: 536, Number of groups: 10, c = 2.300000
+False positive items: 583, Number of groups: 10, c = 2.400000
+False positive items: 604, Number of groups: 10, c = 2.500000
+False positive items: 566, Number of groups: 11, c = 1.600000
+False positive items: 516, Number of groups: 11, c = 1.700000
+False positive items: 452, Number of groups: 11, c = 1.800000
+False positive items: 493, Number of groups: 11, c = 1.900000
+False positive items: 521, Number of groups: 11, c = 2.000000
+False positive items: 551, Number of groups: 11, c = 2.100000
+False positive items: 594, Number of groups: 11, c = 2.200000
+False positive items: 660, Number of groups: 11, c = 2.300000
+False positive items: 697, Number of groups: 11, c = 2.400000
+False positive items: 757, Number of groups: 11, c = 2.500000
+False positive items: 534, Number of groups: 12, c = 1.600000
+False positive items: 517, Number of groups: 12, c = 1.700000
+False positive items: 546, Number of groups: 12, c = 1.800000
+False positive items: 565, Number of groups: 12, c = 1.900000
+False positive items: 617, Number of groups: 12, c = 2.000000
+False positive items: 671, Number of groups: 12, c = 2.100000
+False positive items: 701, Number of groups: 12, c = 2.200000
+False positive items: 764, Number of groups: 12, c = 2.300000
+False positive items: 883, Number of groups: 12, c = 2.400000
+False positive items: 817, Number of groups: 12, c = 2.500000
+False positive items: 1647.0; FPR: 0.00987984619352981; Size of queries: 166703
+
+python disjoint_Ada-BF.py --data_path ./Datasets-fakenews/Fake_news_score_clean.csv --model_path ./rf_model.p --size_of_Ada_BF 200000  --num_group_min 8  --num_group_max 12  --c_min 1.6  --c_max 2.5
+Num hash functions:  94
+Num hash functions:  93
+Num hash functions:  92
+Num hash functions:  92
+Num hash functions:  91
+Num hash functions:  90
+Num hash functions:  90
+False positive items: 758, Number of groups: 8, c = 1.600000
+Num hash functions:  77
+Num hash functions:  76
+Num hash functions:  75
+Num hash functions:  74
+Num hash functions:  74
+Num hash functions:  73
+Num hash functions:  72
+False positive items: 534, Number of groups: 8, c = 1.700000
+Num hash functions:  67
+Num hash functions:  66
+Num hash functions:  65
+Num hash functions:  64
+Num hash functions:  63
+Num hash functions:  62
+Num hash functions:  62
+False positive items: 397, Number of groups: 8, c = 1.800000
+Num hash functions:  59
+Num hash functions:  58
+Num hash functions:  57
+Num hash functions:  56
+Num hash functions:  55
+Num hash functions:  54
+Num hash functions:  53
+False positive items: 298, Number of groups: 8, c = 1.900000
+Num hash functions:  53
+Num hash functions:  52
+Num hash functions:  51
+Num hash functions:  50
+Num hash functions:  49
+Num hash functions:  48
+Num hash functions:  47
+False positive items: 225, Number of groups: 8, c = 2.000000
+Num hash functions:  47
+Num hash functions:  46
+Num hash functions:  45
+Num hash functions:  44
+Num hash functions:  43
+Num hash functions:  42
+Num hash functions:  41
+False positive items: 171, Number of groups: 8, c = 2.100000
+Num hash functions:  43
+Num hash functions:  42
+Num hash functions:  41
+Num hash functions:  40
+Num hash functions:  39
+Num hash functions:  38
+Num hash functions:  36
+False positive items: 138, Number of groups: 8, c = 2.200000
+Num hash functions:  41
+Num hash functions:  39
+Num hash functions:  38
+Num hash functions:  37
+Num hash functions:  36
+Num hash functions:  35
+Num hash functions:  33
+False positive items: 117, Number of groups: 8, c = 2.300000
+Num hash functions:  38
+Num hash functions:  36
+Num hash functions:  35
+Num hash functions:  34
+Num hash functions:  33
+Num hash functions:  31
+Num hash functions:  30
+False positive items: 100, Number of groups: 8, c = 2.400000
+Num hash functions:  35
+Num hash functions:  34
+Num hash functions:  33
+Num hash functions:  32
+Num hash functions:  30
+Num hash functions:  29
+Num hash functions:  28
+False positive items: 88, Number of groups: 8, c = 2.500000
+Num hash functions:  96
+Num hash functions:  95
+Num hash functions:  95
+Num hash functions:  94
+Num hash functions:  93
+Num hash functions:  93
+Num hash functions:  92
+Num hash functions:  91
+False positive items: 466, Number of groups: 9, c = 1.600000
+Num hash functions:  77
+Num hash functions:  77
+Num hash functions:  76
+Num hash functions:  75
+Num hash functions:  74
+Num hash functions:  73
+Num hash functions:  73
+Num hash functions:  72
+False positive items: 322, Number of groups: 9, c = 1.700000
+Num hash functions:  67
+Num hash functions:  66
+Num hash functions:  65
+Num hash functions:  64
+Num hash functions:  63
+Num hash functions:  62
+Num hash functions:  62
+Num hash functions:  61
+False positive items: 234, Number of groups: 9, c = 1.800000
+Num hash functions:  58
+Num hash functions:  57
+Num hash functions:  56
+Num hash functions:  56
+Num hash functions:  55
+Num hash functions:  54
+Num hash functions:  53
+Num hash functions:  52
+False positive items: 168, Number of groups: 9, c = 1.900000
+Num hash functions:  52
+Num hash functions:  51
+Num hash functions:  50
+Num hash functions:  49
+Num hash functions:  48
+Num hash functions:  47
+Num hash functions:  46
+Num hash functions:  45
+False positive items: 126, Number of groups: 9, c = 2.000000
+Num hash functions:  47
+Num hash functions:  46
+Num hash functions:  45
+Num hash functions:  44
+Num hash functions:  43
+Num hash functions:  42
+Num hash functions:  41
+Num hash functions:  40
+False positive items: 96, Number of groups: 9, c = 2.100000
+Num hash functions:  43
+Num hash functions:  41
+Num hash functions:  40
+Num hash functions:  39
+Num hash functions:  38
+Num hash functions:  37
+Num hash functions:  36
+Num hash functions:  35
+False positive items: 78, Number of groups: 9, c = 2.200000
+Num hash functions:  40
+Num hash functions:  39
+Num hash functions:  38
+Num hash functions:  37
+Num hash functions:  36
+Num hash functions:  34
+Num hash functions:  33
+Num hash functions:  32
+False positive items: 70, Number of groups: 9, c = 2.300000
+Num hash functions:  37
+Num hash functions:  36
+Num hash functions:  34
+Num hash functions:  33
+Num hash functions:  32
+Num hash functions:  31
+Num hash functions:  29
+Num hash functions:  28
+False positive items: 63, Number of groups: 9, c = 2.400000
+Num hash functions:  34
+Num hash functions:  32
+Num hash functions:  31
+Num hash functions:  30
+Num hash functions:  28
+Num hash functions:  27
+Num hash functions:  26
+Num hash functions:  25
+False positive items: 61, Number of groups: 9, c = 2.500000
+Num hash functions:  97
+Num hash functions:  96
+Num hash functions:  96
+Num hash functions:  95
+Num hash functions:  94
+Num hash functions:  94
+Num hash functions:  93
+Num hash functions:  92
+Num hash functions:  92
+False positive items: 299, Number of groups: 10, c = 1.600000
+Num hash functions:  78
+Num hash functions:  77
+Num hash functions:  76
+Num hash functions:  76
+Num hash functions:  75
+Num hash functions:  74
+Num hash functions:  73
+Num hash functions:  73
+Num hash functions:  72
+False positive items: 197, Number of groups: 10, c = 1.700000
+Num hash functions:  67
+Num hash functions:  66
+Num hash functions:  65
+Num hash functions:  64
+Num hash functions:  64
+Num hash functions:  63
+Num hash functions:  62
+Num hash functions:  61
+Num hash functions:  60
+False positive items: 144, Number of groups: 10, c = 1.800000
+Num hash functions:  58
+Num hash functions:  58
+Num hash functions:  57
+Num hash functions:  56
+Num hash functions:  55
+Num hash functions:  54
+Num hash functions:  53
+Num hash functions:  52
+Num hash functions:  51
+False positive items: 103, Number of groups: 10, c = 1.900000
+Num hash functions:  51
+Num hash functions:  50
+Num hash functions:  49
+Num hash functions:  48
+Num hash functions:  47
+Num hash functions:  46
+Num hash functions:  45
+Num hash functions:  44
+Num hash functions:  43
+False positive items: 77, Number of groups: 10, c = 2.000000
+Num hash functions:  48
+Num hash functions:  47
+Num hash functions:  46
+Num hash functions:  44
+Num hash functions:  43
+Num hash functions:  42
+Num hash functions:  41
+Num hash functions:  40
+Num hash functions:  39
+False positive items: 61, Number of groups: 10, c = 2.100000
+Num hash functions:  42
+Num hash functions:  41
+Num hash functions:  40
+Num hash functions:  38
+Num hash functions:  37
+Num hash functions:  36
+Num hash functions:  35
+Num hash functions:  34
+Num hash functions:  33
+False positive items: 49, Number of groups: 10, c = 2.200000
+Num hash functions:  38
+Num hash functions:  37
+Num hash functions:  36
+Num hash functions:  34
+Num hash functions:  33
+Num hash functions:  32
+Num hash functions:  31
+Num hash functions:  30
+Num hash functions:  28
+False positive items: 50, Number of groups: 10, c = 2.300000
+Num hash functions:  38
+Num hash functions:  37
+Num hash functions:  35
+Num hash functions:  34
+Num hash functions:  33
+Num hash functions:  32
+Num hash functions:  30
+Num hash functions:  29
+Num hash functions:  28
+False positive items: 47, Number of groups: 10, c = 2.400000
+Num hash functions:  30
+Num hash functions:  28
+Num hash functions:  27
+Num hash functions:  26
+Num hash functions:  24
+Num hash functions:  23
+Num hash functions:  22
+Num hash functions:  20
+Num hash functions:  19
+False positive items: 49, Number of groups: 10, c = 2.500000
+Num hash functions:  97
+Num hash functions:  96
+Num hash functions:  96
+Num hash functions:  95
+Num hash functions:  94
+Num hash functions:  94
+Num hash functions:  93
+Num hash functions:  92
+Num hash functions:  92
+Num hash functions:  91
+False positive items: 193, Number of groups: 11, c = 1.600000
+Num hash functions:  78
+Num hash functions:  77
+Num hash functions:  76
+Num hash functions:  76
+Num hash functions:  75
+Num hash functions:  74
+Num hash functions:  73
+Num hash functions:  73
+Num hash functions:  72
+Num hash functions:  71
+False positive items: 124, Number of groups: 11, c = 1.700000
+Num hash functions:  67
+Num hash functions:  66
+Num hash functions:  65
+Num hash functions:  64
+Num hash functions:  63
+Num hash functions:  63
+Num hash functions:  62
+Num hash functions:  61
+Num hash functions:  60
+Num hash functions:  59
+False positive items: 94, Number of groups: 11, c = 1.800000
+Num hash functions:  57
+Num hash functions:  56
+Num hash functions:  55
+Num hash functions:  54
+Num hash functions:  53
+Num hash functions:  53
+Num hash functions:  52
+Num hash functions:  51
+Num hash functions:  50
+Num hash functions:  49
+False positive items: 68, Number of groups: 11, c = 1.900000
+Num hash functions:  51
+Num hash functions:  50
+Num hash functions:  49
+Num hash functions:  48
+Num hash functions:  47
+Num hash functions:  46
+Num hash functions:  45
+Num hash functions:  44
+Num hash functions:  43
+Num hash functions:  42
+False positive items: 53, Number of groups: 11, c = 2.000000
+Num hash functions:  44
+Num hash functions:  43
+Num hash functions:  42
+Num hash functions:  40
+Num hash functions:  39
+Num hash functions:  38
+Num hash functions:  37
+Num hash functions:  36
+Num hash functions:  35
+Num hash functions:  34
+False positive items: 44, Number of groups: 11, c = 2.100000
+Num hash functions:  42
+Num hash functions:  41
+Num hash functions:  40
+Num hash functions:  38
+Num hash functions:  37
+Num hash functions:  36
+Num hash functions:  35
+Num hash functions:  34
+Num hash functions:  33
+Num hash functions:  32
+False positive items: 37, Number of groups: 11, c = 2.200000
+Num hash functions:  33
+Num hash functions:  32
+Num hash functions:  31
+Num hash functions:  29
+Num hash functions:  28
+Num hash functions:  27
+Num hash functions:  26
+Num hash functions:  25
+Num hash functions:  23
+Num hash functions:  22
+False positive items: 45, Number of groups: 11, c = 2.300000
+Num hash functions:  31
+Num hash functions:  29
+Num hash functions:  28
+Num hash functions:  27
+Num hash functions:  25
+Num hash functions:  24
+Num hash functions:  23
+Num hash functions:  22
+Num hash functions:  20
+Num hash functions:  19
+False positive items: 46, Number of groups: 11, c = 2.400000
+Num hash functions:  33
+Num hash functions:  32
+Num hash functions:  30
+Num hash functions:  29
+Num hash functions:  28
+Num hash functions:  27
+Num hash functions:  25
+Num hash functions:  24
+Num hash functions:  23
+Num hash functions:  21
+False positive items: 43, Number of groups: 11, c = 2.500000
+Num hash functions:  95
+Num hash functions:  94
+Num hash functions:  94
+Num hash functions:  93
+Num hash functions:  92
+Num hash functions:  92
+Num hash functions:  91
+Num hash functions:  90
+Num hash functions:  90
+Num hash functions:  89
+Num hash functions:  88
+False positive items: 129, Number of groups: 12, c = 1.600000
+Num hash functions:  78
+Num hash functions:  78
+Num hash functions:  77
+Num hash functions:  76
+Num hash functions:  75
+Num hash functions:  75
+Num hash functions:  74
+Num hash functions:  73
+Num hash functions:  72
+Num hash functions:  72
+Num hash functions:  71
+False positive items: 83, Number of groups: 12, c = 1.700000
+Num hash functions:  65
+Num hash functions:  64
+Num hash functions:  63
+Num hash functions:  63
+Num hash functions:  62
+Num hash functions:  61
+Num hash functions:  60
+Num hash functions:  59
+Num hash functions:  58
+Num hash functions:  57
+Num hash functions:  57
+False positive items: 64, Number of groups: 12, c = 1.800000
+Num hash functions:  57
+Num hash functions:  56
+Num hash functions:  55
+Num hash functions:  54
+Num hash functions:  53
+Num hash functions:  53
+Num hash functions:  52
+Num hash functions:  51
+Num hash functions:  50
+Num hash functions:  49
+Num hash functions:  48
+False positive items: 50, Number of groups: 12, c = 1.900000
+Num hash functions:  51
+Num hash functions:  50
+Num hash functions:  49
+Num hash functions:  48
+Num hash functions:  47
+Num hash functions:  46
+Num hash functions:  45
+Num hash functions:  44
+Num hash functions:  43
+Num hash functions:  42
+Num hash functions:  41
+False positive items: 41, Number of groups: 12, c = 2.000000
+Num hash functions:  42
+Num hash functions:  41
+Num hash functions:  40
+Num hash functions:  39
+Num hash functions:  38
+Num hash functions:  37
+Num hash functions:  36
+Num hash functions:  35
+Num hash functions:  33
+Num hash functions:  32
+Num hash functions:  31
+False positive items: 35, Number of groups: 12, c = 2.100000
+Num hash functions:  34
+Num hash functions:  33
+Num hash functions:  32
+Num hash functions:  30
+Num hash functions:  29
+Num hash functions:  28
+Num hash functions:  27
+Num hash functions:  26
+Num hash functions:  25
+Num hash functions:  24
+Num hash functions:  22
+False positive items: 42, Number of groups: 12, c = 2.200000
+Num hash functions:  24
+Num hash functions:  22
+Num hash functions:  20
+Num hash functions:  19
+Num hash functions:  18
+Num hash functions:  17
+Num hash functions:  16
+Num hash functions:  14
+Num hash functions:  13
+Num hash functions:  12
+Num hash functions:  11
+False positive items: 61, Number of groups: 12, c = 2.300000
+Num hash functions:  18
+Num hash functions:  16
+Num hash functions:  15
+Num hash functions:  13
+Num hash functions:  12
+Num hash functions:  11
+Num hash functions:  10
+Num hash functions:  8
+Num hash functions:  7
+Num hash functions:  6
+Num hash functions:  4
+False positive items: 65, Number of groups: 12, c = 2.400000
+Num hash functions:  26
+Num hash functions:  24
+Num hash functions:  23
+Num hash functions:  22
+Num hash functions:  20
+Num hash functions:  19
+Num hash functions:  18
+Num hash functions:  16
+Num hash functions:  15
+Num hash functions:  14
+Num hash functions:  12
+False positive items: 55, Number of groups: 12, c = 2.500000
+False positive items: 137.0; FPR: 0.0008219884921611098; Size of queries: 166669

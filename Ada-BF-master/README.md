@@ -15,4 +15,8 @@ The python files include the implementation of the Bloom filter, learned Bloom f
 - Run disjoint Ada-BF: `python disjoint_Ada-BF.py --data_path ./Datasets/URL_data.csv --size_of_Ada_BF 200000  --num_group_min 8  --num_group_max 12  --c_min 1.6  --c_max 2.5`
 
 
+python Bloom_filter.py --data_path ./Datasets-fakenews/Fake_news_score_clean.csv --size_of_BF 200000
 
+python Ada-BF.py --data_path ./Datasets-fakenews/Fake_news_score_clean.csv --size_of_Ada_BF 200000  --num_group_min 8  --num_group_max 12  --c_min 1.6  --c_max 2.5
+
+python disjoint_Ada-BF.py --data_path ./Datasets-fakenews/Fake_news_score_clean.csv --model_path ./rf_model.p --size_of_Ada_BF 200000  --num_group_min 8  --num_group_max 12  --c_min 1.6  --c_max 2.5

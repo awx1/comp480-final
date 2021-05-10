@@ -9,6 +9,7 @@ Learned Bloom Filter: Why is the negative testing data being reduced?
 
 disjoint ada-bf:
 - What is model path, importantance of R_sum
+- model path is the pickle file of the ranfom forest model
 
 Implementation Notes
 - Closer to 1 (0,1) or Closer 0 (-1,0) => malcious
