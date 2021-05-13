@@ -26,6 +26,14 @@ def runLearned(dataPathName, size):
     QPS2 = float(QPS2)
     return (FPR2, QPS2)
 
+def runDis(dataPathName, size):
+    disJoint_out = subprocess.check_output([sys.executable, "./disjoint_Ada_BF.py", "--data_path", dataPathName, "--model_path", "./rf_model.p", "--size_of_Ada_BF", size,  "--num_group_min", "8", "--num_group_max", "12",  "--c_min", "1.6",  "--c_max", "2.5"])
+    # print(learned_BF_out)
+    FPR2, QPS2 = (disJoint_out.decode("utf-8")).split(' ')
+    FPR2 = float(FPR2)
+    QPS2 = float(QPS2)
+    return (FPR2, QPS2)
+
 
 datasets = ["./Datasets/URL_data.csv", "./Datasets/Malware_data.csv", "./Datasets-fakenews/Fake_news_score_clean.csv", "./Datasets-fakenews/Fake_news_score_full_clean.csv"]
 # datasets = ["./Datasets/URL_data.csv"]
@@ -34,13 +42,13 @@ ranges = [range(200000, 550000, 50000), range(100000, 350000, 50000), range(1500
 for idx, sett in enumerate(datasets):
     plt.figure(figsize=(20,12))
     # #Ada
-    # listJx = []
-    # ListlistPx = []
-    # for size in ranges[idx]:
-    #     tupp = runAda(sett, str(size))
-    #     listJx.append(size)
-    #     ListlistPx.append(tupp[0])
-    # plt.plot(listJx, ListlistPx, linestyle = "solid", marker = "x")
+    listJx = []
+    ListlistPx = []
+    for size in ranges[idx]:
+        tupp = runAda(sett, str(size))
+        listJx.append(size)
+        ListlistPx.append(tupp[0])
+    plt.plot(listJx, ListlistPx, linestyle = "solid", marker = "x")
 
     #BF
     listJx = []
@@ -52,20 +60,29 @@ for idx, sett in enumerate(datasets):
     plt.plot(listJx, ListlistPx, linestyle = "solid", marker = "x")
 
     #BFLearned
-    # listJx = []
-    # ListlistPx = []
-    # for size in ranges[idx]:
-    #     tupp = runLearned(sett, str(size))
-    #     listJx.append(size)
-    #     ListlistPx.append(tupp[0])
-    # plt.plot(listJx, ListlistPx, linestyle = "solid", marker = "x")
+    listJx = []
+    ListlistPx = []
+    for size in ranges[idx]:
+        tupp = runLearned(sett, str(size))
+        listJx.append(size)
+        ListlistPx.append(tupp[0])
+    plt.plot(listJx, ListlistPx, linestyle = "solid", marker = "x")
 
-    plt.legend(["Ada-BF", "BloomFilter", "Learned BloomFilter"])
+    #DisJoint
+    listJx = []
+    ListlistPx = []
+    for size in ranges[idx]:
+        tupp = runDis(sett, str(size))
+        listJx.append(size)
+        ListlistPx.append(tupp[0])
+    plt.plot(listJx, ListlistPx, linestyle = "solid", marker = "x")
+
+    plt.legend(["Ada-BF", "BloomFilter", "Learned BloomFilter", "DisJoint Ada-BF"])
     plt.title("False Positive Rate vs Bitmap Size")
     plt.xlabel("Bitmap Size")
     plt.ylabel("False Positive Rate")
     plt.show
-    plt.savefig(os.path.dirname(os.path.realpath(__file__))+sett[1:-4])
+    plt.savefig(os.path.dirname(os.path.realpath(__file__))+sett[2:-4])
     plt.clf()
 
 
