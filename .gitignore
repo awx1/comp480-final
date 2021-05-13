@@ -4,3 +4,4 @@ Ada-BF-master/.DS_Store
 Ada-BF-master/.ipynb_checkpoints/
 Ada-BF-master/Datasets-fakenews/*.csv
 /Ada-BF-master/rf_model_full.p
+/Ada-BF-master/URL_Random_Forest_Model_n_10_leaf_20.pickle
