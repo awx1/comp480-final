@@ -1424,3 +1424,28 @@ Num hash functions:  14
 Num hash functions:  12
 False positive items: 55, Number of groups: 12, c = 2.500000
 False positive items: 137.0; FPR: 0.0008219884921611098; Size of queries: 166669
+
+./Datasets/URL_data.csv 8 12 1.6 2.5
+Ada_Bf FPR & QPS: 0.01827441494899927 26323.74660143008
+b'0.00030171600980577034 2406.500715055431\n'
+DisJoint Ada_Bf FPR & QPS: 0.00030171600980577034 2406.500715055431
+./Datasets/Malware_data.csv 8 12 1.6 2.5
+Ada_Bf FPR & QPS: 0.0016213730852067856 22912.7527403437
+
+./Datasets/URL_data.csv ./Ada_BF.py 0.017694366863012945 25532.49039934261
+./Datasets/URL_data.csv ./Bloom_filter.py 0.23589105536849006 99517.50903528027
+./Datasets/URL_data.csv ./learned_Bloom_Filter.py 0.033138147152398933 37422.3727821937
+./Datasets/URL_data.csv ./disjoint_Ada_BF.py 0.033138147152398933 37422.3727821937
+./Datasets/Malware_data.csv ./Ada_BF.py 0.0012825787091934274 25448.382855105185
+./Datasets/Malware_data.csv ./Bloom_filter.py 0.386031991868935 176123.70457926526
+./Datasets/Malware_data.csv ./learned_Bloom_Filter.py 0.002903951794400213 20997.620301691466
+./Datasets/Malware_data.csv ./disjoint_Ada_BF.py 0.002903951794400213 20997.620301691466
+./Datasets-fakenews/Fake_news_score_clean.csv ./Ada_BF.py 0.009441941656718836 22231.97697335497
+./Datasets-fakenews/Fake_news_score_clean.csv ./Bloom_filter.py 0.04359249683568982 68170.19970232216
+./Datasets-fakenews/Fake_news_score_clean.csv ./learned_Bloom_Filter.py 0.04316658968344901 62764.359345569515
+./Datasets-fakenews/Fake_news_score_clean.csv ./disjoint_Ada_BF.py 0.04316658968344901 62764.359345569515
+./Datasets-fakenews/Fake_news_score_full_clean.csv ./Ada_BF.py 7.798299970606408e-05 19389.990259885493
+./Datasets-fakenews/Fake_news_score_full_clean.csv ./Bloom_filter.py 0.04376645891195719 64912.9532165518
+./Datasets-fakenews/Fake_news_score_full_clean.csv ./learned_Bloom_Filter.py 0.0009477933810429326 10872.600760313664
+./Datasets-fakenews/Fake_news_score_full_clean.csv ./disjoint_Ada_BF.py 0.0009477933810429326 10872.600760313664
+
