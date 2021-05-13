@@ -27,45 +27,45 @@ def runLearned(dataPathName, size):
     return (FPR2, QPS2)
 
 
-# datasets = ["/Datasets/URL_data.csv", "./Datasets/Malware_data.csv", "./Datasets-fakenews/Fake_news_score_clean.csv", "./Datasets-fakenews/Fake_news_score_full_clean.csv"
-datasets = ["./Datasets/URL_data.csv"]
+datasets = ["./Datasets/URL_data.csv", "./Datasets/Malware_data.csv", "./Datasets-fakenews/Fake_news_score_clean.csv", "./Datasets-fakenews/Fake_news_score_full_clean.csv"]
+# datasets = ["./Datasets/URL_data.csv"]
+ranges = [range(200000, 550000, 50000), range(100000, 350000, 50000), range(150000, 500000, 50000), range(150000, 500000, 50000)]
 
-for sett in datasets:
-
+for idx, sett in enumerate(datasets):
     plt.figure(figsize=(20,12))
-    #Ada
-    listJx = []
-    ListlistPx = []
-    for size in range(200000, 300000, 50000):
-        tupp = runAda(sett, str(size))
-        listJx.append(tupp[1])
-        ListlistPx.append(tupp[0])
-    plt.plot(listJx, ListlistPx, linestyle = "dashed")
+    # #Ada
+    # listJx = []
+    # ListlistPx = []
+    # for size in ranges[idx]:
+    #     tupp = runAda(sett, str(size))
+    #     listJx.append(size)
+    #     ListlistPx.append(tupp[0])
+    # plt.plot(listJx, ListlistPx, linestyle = "solid", marker = "x")
 
     #BF
     listJx = []
     ListlistPx = []
-    for size in range(200000, 300000, 50000):
+    for size in ranges[idx]:
         tupp = runBF(sett, str(size))
-        listJx.append(tupp[1])
+        listJx.append(size)
         ListlistPx.append(tupp[0])
-    plt.plot(listJx, ListlistPx, linestyle = "dashed")
+    plt.plot(listJx, ListlistPx, linestyle = "solid", marker = "x")
 
     #BFLearned
-    listJx = []
-    ListlistPx = []
-    for size in range(200000, 300000, 50000):
-        tupp = runLearned(sett, str(size))
-        listJx.append(tupp[1])
-        ListlistPx.append(tupp[0])
-    plt.plot(listJx, ListlistPx, linestyle = "dashed")
+    # listJx = []
+    # ListlistPx = []
+    # for size in ranges[idx]:
+    #     tupp = runLearned(sett, str(size))
+    #     listJx.append(size)
+    #     ListlistPx.append(tupp[0])
+    # plt.plot(listJx, ListlistPx, linestyle = "solid", marker = "x")
 
     plt.legend(["Ada-BF", "BloomFilter", "Learned BloomFilter"])
-    plt.title("False Positive Rate vs Query per second")
-    plt.xlabel("Query per second")
+    plt.title("False Positive Rate vs Bitmap Size")
+    plt.xlabel("Bitmap Size")
     plt.ylabel("False Positive Rate")
     plt.show
-    plt.savefig(os.path.dirname(os.path.realpath(__file__))+sett)
+    plt.savefig(os.path.dirname(os.path.realpath(__file__))+sett[1:-4])
     plt.clf()
 
 

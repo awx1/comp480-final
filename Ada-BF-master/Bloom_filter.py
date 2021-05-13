@@ -138,7 +138,7 @@ def main():
     # print('False positive items: ', sum(n1)/len(query_negative))
 
     FPR = sum(n1)/len(query_negative)
-    QPS = end-start
+    QPS = len(query_negative)/(end-start)
 
     print(FPR, QPS)
 

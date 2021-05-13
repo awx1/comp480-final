@@ -121,7 +121,7 @@ def main():
     end2 = time.time()
     FP_items = sum(BF_positive) + len(ML_positive)
     FPR = FP_items/len(negative_sample)
-    timee = (end-start) + (end2-start2)
+    timee = (end2-start2)
     QPS = len(negative_sample)/timee
     print(FPR, QPS)
     # print('False positive items: {}; FPR: {}; Size of queries: {}'.format(FP_items, FPR, len(negative_sample)))

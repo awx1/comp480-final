@@ -260,6 +260,7 @@ def main(arg):
     score_negative = negative_sample.loc[(negative_sample['score'] < thresholds_opt[-2]), 'score']
     test_result = np.zeros(len(query_negative))
     ss = 0
+    total = 0
     for score_s, query_s in zip(score_negative, query_negative):
         ix = min(np.where(score_s < thresholds_opt)[0])
         # thres = thresholds[ix]
@@ -268,10 +269,10 @@ def main(arg):
         test_result[ss] = bloom_filter_opt.test(query_s, k)
         end2 = time.time()
         ss += 1
+        total += end2 - start2
     FP_items = sum(test_result) + len(ML_positive)
     FPR = FP_items/len(negative_sample)
-    timee = (end-start) + (end2-start2)
-    QPS = len(query_negative)/timee
+    QPS = len(query_negative)/total
     
     # print('False positive items: {}; FPR: {}; Size of queries: {}; Query per second: {}'.format(FP_items, FPR, len(query_negative), QPS))
     print(FPR, QPS)
