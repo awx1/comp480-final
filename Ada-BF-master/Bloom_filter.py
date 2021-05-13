@@ -3,6 +3,7 @@ import pandas as pd
 from sklearn.utils import murmurhash3_32
 from random import randint
 import argparse
+import time
 
 
 
@@ -24,7 +25,7 @@ class BloomFilter():
             raise SyntaxError('The hash table is empty')
         if (self.n > 0) & (self.hash_len > 0):
             self.k = max(1,int(self.hash_len/n*0.6931472))
-            print("Num hash functions: ", self.k)
+            # print("Num hash functions: ", self.k)
         elif (self.n==0):
             self.k = 1
         self.h = []
@@ -74,9 +75,7 @@ class BloomFilter():
                     ss += 1
         return test_result
 
-'''Run Bloom filter'''
-
-if __name__ == '__main__':
+def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--data_path', action="store", dest="data_path", type=str, required=True,
                         help="path of the dataset")
@@ -108,19 +107,41 @@ if __name__ == '__main__':
         # query_negative = negative_sample['query']
         query_negative = negative_sample['url']
     elif (dataset_name == "Fake_news_score_clean.csv"):
-        negative_sample = data.loc[(data['label'] == -1)]
+        negative_sample = data.loc[(data['label'] == 0)]
         positive_sample = data.loc[(data['label'] == 1)]
 
         # query = positive_sample['query']
         query = positive_sample['title']
         # query_negative = negative_sample['query']
         query_negative = negative_sample['title']
+
+    elif (dataset_name == "Fake_news_score_full_clean.csv"):
+        negative_sample = data.loc[(data['label'] == 0)]
+        positive_sample = data.loc[(data['label'] == 1)]
+
+        # query = positive_sample['query']
+        query = positive_sample['title']
+        # query_negative = negative_sample['query']
+        query_negative = negative_sample['title']
+
     else:
         print("Should not reach this case")
+
     n = len(query)
-    print("This is n: ", n)
+    # print("This is n: ", n)
     bloom_filter = BloomFilter(n, R_sum)
     bloom_filter.insert(query)
     
+    start = time.time()
     n1 = bloom_filter.test(query_negative, single_key=False)
-    print('False positive items: ', sum(n1)/len(query_negative))
+    end = time.time()
+    # print('False positive items: ', sum(n1)/len(query_negative))
+
+    FPR = sum(n1)/len(query_negative)
+    QPS = end-start
+
+    print(FPR, QPS)
+
+'''Run Bloom filter'''
+if __name__ == '__main__':
+    main()
