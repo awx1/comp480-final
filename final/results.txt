@@ -1449,3 +1449,39 @@ Ada_Bf FPR & QPS: 0.0016213730852067856 22912.7527403437
 ./Datasets-fakenews/Fake_news_score_full_clean.csv ./learned_Bloom_Filter.py 0.0009477933810429326 10872.600760313664
 ./Datasets-fakenews/Fake_news_score_full_clean.csv ./disjoint_Ada_BF.py 0.0009477933810429326 10872.600760313664
 
+
+input1 = []
+f = open("input.txt", "r")
+for x in f:
+  input1.append([float(elem) for elem in x.rstrip("\n").split(" ")[2:]])
+  
+import matplotlib.pyplot as plt
+import matplotlib.patches as mpatches
+import random
+
+print(input1)
+plt.figure(figsize=(20,12))
+col = ['b', 'g', 'r', 'k']
+markers = ["o", "^", "s", "x"]
+i = 0
+for idx in range(4):
+  plt.scatter(input1[i][1], input1[i][0], color = col[idx], marker = markers[0])
+  plt.scatter(input1[i + 1][1], input1[i + 1][0], color = col[idx], marker = markers[1])
+  plt.scatter(input1[i + 2][1], input1[i + 2][0], color = col[idx], marker = markers[2])
+  plt.scatter(input1[i + 3][1], input1[i + 3][0], color = col[idx], marker = markers[3])
+  i += 4
+  
+label_column = ["Ada_BF", "BF", "LBF", "Disjoint Ada_BF"]
+label_row = ["URL_data", "Malware_data", "Fake_news_score_clean", "Fake_news_score_full_clean"]
+rows = [mpatches.Patch(color='b'), mpatches.Patch(color='g'), mpatches.Patch(color='r'), mpatches.Patch(color='k')]
+columns = [plt.plot([], [], "o", markerfacecolor='w', markeredgecolor='k')[0], 
+    plt.plot([], [], "^", markerfacecolor='w', markeredgecolor='k')[0], 
+    plt.plot([], [], "s", markerfacecolor='w', markeredgecolor='k')[0],
+    plt.plot([], [], "x", markerfacecolor='w', markeredgecolor='k')[0]]
+
+plt.legend(rows + columns, label_row + label_column)
+
+plt.title("False Positive Rate vs Query per second")
+plt.xlabel("Query per second")
+plt.ylabel("False Positive Rate")
+plt.show()

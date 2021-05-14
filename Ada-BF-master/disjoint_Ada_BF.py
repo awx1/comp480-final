@@ -99,7 +99,7 @@ def Find_Optimal_Parameters(c_min, c_max, num_group_min, num_group_max, R_sum, t
                     test_result[ss] = 0
                 ss += 1
             FP_items = sum(test_result) + len(ML_positive)
-            # print('False positive items: %d, Number of groups: %d, c = %f' %(FP_items, num_group, round(c, 2)))
+            print('False positive items: %d, Number of groups: %d, c = %f' %(FP_items, num_group, round(c, 2)))
             if FP_opt > FP_items:
                 FP_opt = FP_items
                 Bloom_Filters_opt = Bloom_Filters
@@ -290,7 +290,7 @@ def main():
     QPS = len(query_negative)/total
 
     print(FPR, QPS)
-    # print('False positive items: {}; FPR: {}; Size of queries: {}; Query per second: {}'.format(FP_items, FPR, len(query_negative), QPS))
+    print('False positive items: {}; FPR: {}; Size of queries: {}; Query per second: {}'.format(FP_items, FPR, len(query_negative), QPS))
 
 '''
 Implement disjoint Ada-BF
