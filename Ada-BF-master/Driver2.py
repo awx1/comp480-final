@@ -40,6 +40,7 @@ datasets = ["./Datasets/URL_data.csv", "./Datasets/Malware_data.csv", "./Dataset
 ranges = [range(200000, 550000, 50000), range(100000, 350000, 50000), range(150000, 500000, 50000), range(150000, 500000, 50000)]
 
 for idx, sett in enumerate(datasets):
+
     plt.figure(figsize=(20,12))
     # #Ada
     listJx = []
@@ -49,6 +50,7 @@ for idx, sett in enumerate(datasets):
         listJx.append(size)
         ListlistPx.append(tupp[0])
     plt.plot(listJx, ListlistPx, linestyle = "solid", marker = "x")
+    print("plotted ada")
 
     #BF
     listJx = []
@@ -58,6 +60,7 @@ for idx, sett in enumerate(datasets):
         listJx.append(size)
         ListlistPx.append(tupp[0])
     plt.plot(listJx, ListlistPx, linestyle = "solid", marker = "x")
+    print("plotted bf")
 
     #BFLearned
     listJx = []
@@ -67,6 +70,7 @@ for idx, sett in enumerate(datasets):
         listJx.append(size)
         ListlistPx.append(tupp[0])
     plt.plot(listJx, ListlistPx, linestyle = "solid", marker = "x")
+    print("plotted bflearned")
 
     #DisJoint
     listJx = []
@@ -76,13 +80,15 @@ for idx, sett in enumerate(datasets):
         listJx.append(size)
         ListlistPx.append(tupp[0])
     plt.plot(listJx, ListlistPx, linestyle = "solid", marker = "x")
+    print("plotted disjoint")
+
 
     plt.legend(["Ada-BF", "BloomFilter", "Learned BloomFilter", "DisJoint Ada-BF"])
     plt.title("False Positive Rate vs Bitmap Size")
     plt.xlabel("Bitmap Size")
     plt.ylabel("False Positive Rate")
     plt.show
-    plt.savefig(os.path.dirname(os.path.realpath(__file__))+sett[2:-4])
+    plt.savefig(os.path.dirname(os.path.realpath(__file__))+'/x'+sett[-12:-4])
     plt.clf()
 
 
