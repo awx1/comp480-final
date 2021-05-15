@@ -18,3 +18,4 @@ python3 disjoint_Ada_BF.py --data_path ./Datasets-fakenews/Fake_news_score_full_
 printf "Done with 8\n"
 
 
+
