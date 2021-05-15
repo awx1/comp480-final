@@ -1,4 +1,5 @@
 #!/bin/sh
+
 printf "Starting\n"
 python3 disjoint_Ada_BF.py --data_path ./Datasets-fakenews/Fake_news_score_full_clean.csv --model_path ./rf_model.p --size_of_Ada_BF 500000  --num_group_min 8 --num_group_max 12  --c_min 1.6 --c_max 2.5
 printf "Done with 8\n"
