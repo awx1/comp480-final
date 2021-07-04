@@ -1,4 +1,6 @@
-# COMP 480: An Exploratory Analysis of Fake News Detection on Adaptive Learned Bloom FIlters
+# COMP 480: An Exploratory Analysis of Fake News Detection on Adaptive Learned Bloom Filters
+
+Note: For more in-depth experimental details and fleshed out discussion regarding the results, please refer to the short paper attached to this repository.
 
 ## Introduction
 #### We implemented four machine learning-driven bloom filters and examined the accuracy-resource tradeoffs. The following set of algorithms: bloom filters, learned bloom filters, sandwiched learned bloom filters, adaptive bloom filters, and disjoint adaptive bloom filters were compared and contrasted.1 More specifically, we wanted to focus on conducting further exploration into the reproducibility and extensibility of the previous work. Hence, we followed the process outlined in the paper as well as validated the results presented.
